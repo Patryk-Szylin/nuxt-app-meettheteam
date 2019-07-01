@@ -1,0 +1,42 @@
+.btn {
+  /* block on mobile */
+  display: block;
+  text-align: center;
+
+  /* sizing */
+  margin: 26px 0 0;
+  padding: 13px 26px;
+  min-height: 32px;
+  line-height: 32px;
+
+  /* fonts */
+  font-weight: 700;
+  font-size: 16px;
+  text-decoration: none;
+
+  /* appearance */
+  appearance: none;
+  -webkit-appearance: none;
+  border: none;
+  border-radius: 6px;
+
+  transition: background-color 150ms, color 150ms;
+
+  /* modifiers */
+  &--primary {
+    color: #333500;
+    background-color: #bdea00;
+
+    &:hover {
+      background-color: #a8d100;
+      text-decoration: underline;
+    }
+  }
+}
+
+@media only screen and (min-device-width: 420px) {
+  .btn {
+    display: inline-block;
+    text-align: left;
+  }
+}

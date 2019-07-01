@@ -1,0 +1,32 @@
+.headline {
+  position: relative;
+  display: inline-block;
+  line-height: 1;
+  font-weight: 800;
+  background-color: #de0ba0;
+  color: #fff;
+  padding: 0 0.809rem;
+  text-transform: uppercase;
+
+  &--large {
+    font-size: 36.49116px;
+    font-size: 2.2807rem;
+    letter-spacing: -0.91228px;
+    border-radius: 7.29823px;
+    border-radius: 0.45614rem;
+
+    @media (min-width: 569.536px) {
+      font-size: 47.47147px;
+      font-size: calc(2.23235vw + 23.77711px);
+      border-radius: 9.49429px;
+      border-radius: calc(2.23235vw / 5 + 23.77711px / 5);
+    }
+
+    @media (min-width: 1553.28px) {
+      font-size: 58.45178px;
+      font-size: 3.65324rem;
+      border-radius: 11.69036px;
+      border-radius: 0.73065rem;
+    }
+  }
+}
