@@ -1,11 +1,11 @@
 <template>
   <div class="container">
-    <Header/>
-    <Nav/>
-    <Overview/>
-    <Profile/>
-    <Benefits/>
-    <Vacancies/>
+    <Header />
+    <Nav />
+    <Overview />
+    <Profile />
+    <Benefits />
+    <Vacancies />
   </div>
 </template>
 

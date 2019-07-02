@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- Meet the Team Section #meet-the-team  -->
-    <div class="row" id="meet-the-team">
+    <div class="content-section row" id="meet-the-team">
       <div class="container">
         <h2>Meet the Team</h2>
         <div class="profile">

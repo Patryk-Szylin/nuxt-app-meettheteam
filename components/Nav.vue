@@ -23,7 +23,56 @@
 </template>
 
 <script>
-export default {};
+import WaypointHandlers from "../middleware/waypointHandlers";
+export default {
+  mounted() {
+    // Waypoint.refreshAll();
+    var waypointTargets = document.getElementsByClassName("content-section");
+    console.log(waypointTargets);
+    for (var i = 0; i < waypointTargets.length; i++) {
+      new Waypoint({
+        element: waypointTargets[i],
+        handler: function(dir) {
+          console.log("Hit : " + this.element.id);
+          // waypointListeners[this.element.id](this.element, dir);
+          WaypointHandlers.waypointListeners[this.element.id](
+            this.element.id,
+            dir
+          );
+        },
+        offset: 141
+      });
+    }
+
+    var navbarWaypoint = new Waypoint({
+      element: document.getElementById("page-navigation"),
+      handler: function(dir) {
+        WaypointHandlers.waypointListeners[this.element.id](
+          this.element.id,
+          dir
+        );
+      }
+    });
+
+    // this.selectActiveTab(waypointTargets);
+  },
+  computed: {
+    getCurrentTabName() {
+      return this.$store.state.navbar.currentTab;
+    }
+  },
+  methods: {
+    setSectionWaypoint(sectionid, elements) {
+      var _this = this;
+      return;
+    },
+    selectActiveTab(elements) {
+      var nav = this.setSectionWaypoint("page-navigation", elements);
+      var meetTheTeam = this.setSectionWaypoint("meet-the-team", elements);
+      var benefits = this.setSectionWaypoint("benefits", elements);
+    }
+  }
+};
 </script>
 
 <style lang="scss" scoped>
@@ -36,6 +85,11 @@ export default {};
   padding: 0;
   background-color: $primary-colour;
   z-index: 999;
+
+  &.sticky-nav {
+    position: fixed;
+    width: 100%;
+  }
 
   @media (max-width: 767px) {
     display: none;

@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- Benefits #benefits -->
-    <div class="row" id="benefits">
+    <div class="content-section row" id="benefits">
       <div class="container">
         <h2>Benefits</h2>
 

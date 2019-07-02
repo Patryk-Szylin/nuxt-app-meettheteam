@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- Current Vacancies #current-vacancies  -->
-    <div class="row" id="current-vacancies">
+    <div class="content-section row" id="current-vacancies">
       <div class="container">
         <h2>Current Vacancies</h2>
 

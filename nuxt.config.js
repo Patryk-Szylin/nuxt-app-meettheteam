@@ -1,3 +1,5 @@
+const webpack = require("webpack");
+
 export default {
   mode: "universal",
   /*
@@ -14,7 +16,19 @@ export default {
         content: process.env.npm_package_description || ""
       }
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
+    link: [
+      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+      {
+        href: "https://fonts.googleapis.com/css?family=Nunito&display=swap",
+        rel: "stylesheet"
+      }
+    ],
+    script: [
+      {
+        src: "https://code.jquery.com/jquery-3.4.1.min.js",
+        type: "text/javascript"
+      }
+    ]
   },
   /*
    ** Customize the progress-bar color
@@ -27,7 +41,12 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: [
+    {
+      src: "~/plugins/waypoints",
+      ssr: false
+    }
+  ],
   /*
    ** Nuxt.js modules
    */
@@ -36,6 +55,9 @@ export default {
     "@nuxtjs/axios",
     "@nuxtjs/proxy"
   ],
+  router: {
+    base: "/meet-the-team-nuxt/"
+  },
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
@@ -48,6 +70,12 @@ export default {
    ** Build configuration
    */
   build: {
+    vendor: ["jquery"],
+    plugins: [
+      new webpack.ProvidePlugin({
+        $: "jquery"
+      })
+    ],
     /*
      ** You can extend webpack config here
      */
