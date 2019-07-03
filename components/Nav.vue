@@ -26,15 +26,14 @@
 import WaypointHandlers from "../middleware/waypointHandlers";
 export default {
   mounted() {
-    // Waypoint.refreshAll();
+    // Grab dom references for elements to be waypointed
     var waypointTargets = document.getElementsByClassName("content-section");
-    console.log(waypointTargets);
+
+    // For each dom element, create a waypoint
     for (var i = 0; i < waypointTargets.length; i++) {
       new Waypoint({
         element: waypointTargets[i],
         handler: function(dir) {
-          console.log("Hit : " + this.element.id);
-          // waypointListeners[this.element.id](this.element, dir);
           WaypointHandlers.waypointListeners[this.element.id](
             this.element.id,
             dir
@@ -44,6 +43,7 @@ export default {
       });
     }
 
+    // Create waypoint for navigation
     var navbarWaypoint = new Waypoint({
       element: document.getElementById("page-navigation"),
       handler: function(dir) {
@@ -53,8 +53,6 @@ export default {
         );
       }
     });
-
-    // this.selectActiveTab(waypointTargets);
   },
   computed: {
     getCurrentTabName() {

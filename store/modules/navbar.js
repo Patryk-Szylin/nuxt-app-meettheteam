@@ -2,7 +2,7 @@ const state = {
   currentTab: "Tabbb"
 };
 const mutations = {
-  SET_CURRENT_TAB: function(state, payload) {
+  SET_CURRENT_TAB: function (state, payload) {
     state.currentTab = payload;
   }
 };
