@@ -19,4 +19,6 @@ $ npm start
 $ npm run generate
 ```
 
+# Instructions for retrieving content from the CDN
+
 For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).

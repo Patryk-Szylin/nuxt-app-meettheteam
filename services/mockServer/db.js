@@ -1,4 +1,4 @@
-{
+var mockData = {
     "sys": {
         "type": "Array"
     },
@@ -85,4 +85,8 @@
             }
         }
     ]
+}
+
+module.exports = {
+    mockData
 }

@@ -17,6 +17,7 @@ import Overview from "~/components/Overview.vue";
 import Profile from "~/components/Profile.vue";
 import Benefits from "~/components/Benefits.vue";
 import Vacancies from "~/components/Vacancies.vue";
+import jobsService from "../services/jobDetails";
 
 export default {
   components: {
@@ -27,7 +28,12 @@ export default {
     Profile,
     Benefits,
     Vacancies
-  }
+  },
+  created() {
+    this.$store.dispatch("assignAvailableJobs", jobsService.jobs);
+    this.$store.dispatch("assignJobsByFilter", "All");
+  },
+  mounted() {}
 };
 </script>
 
